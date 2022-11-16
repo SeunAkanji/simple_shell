@@ -38,13 +38,11 @@ extern char **environ;
 
 
 /**
- *
  * struct liststr - singly linked list
  * @num: the number field
  * @str: a string
  * @next: points to the next node
  */
-
 typedef struct liststr
 {
 	int num;
@@ -54,10 +52,9 @@ typedef struct liststr
 } list_t;
 
 /**
- *
  * struct passinfo - contains pseudo-arguements to pass into a function,
- * allowing uniform prototype for function pointer struct
- * @arg: a string generated from getline containing arguements
+ *	 allowing uniform prototype for function pointer struct
+ * @arg: a string, generated from getline containing arguements
  * @argv: an array of strings generated from arg
  * @path: a string path for the current command
  * @argc: the argument count
@@ -76,7 +73,6 @@ typedef struct liststr
  * @readfd: the fd from which to read line input
  * @histcount: the history line number count
  */
-
 typedef struct passinfo
 
 {
@@ -94,7 +90,6 @@ typedef struct passinfo
 	char **environ;
 	int env_changed;
 	int status;
-	
 	char **cmd_buf; /* pointer to cmd content; chain buffer, for memory mangement */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
