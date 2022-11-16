@@ -5,7 +5,7 @@
  * @info: the parameter & return info struct
  * @av: the argument vector from main()
  *
- * Return: 0 on success, 1 on error, or error code
+ * Return: 0 for success status, 1 for error, or error code
  *
  */
 
@@ -56,7 +56,6 @@ int hsh(info_t *info, char **av)
  */
 
 int find_builtin(info_t *info)
-
 {
 	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
@@ -129,7 +128,6 @@ void find_cmd(info_t *info)
  */
 
 void fork_cmd(info_t *info)
-
 {
 	pid_t child_pid;
 	child_pid = fork();
@@ -161,3 +159,4 @@ void fork_cmd(info_t *info)
 		}
 	}
 }
+
