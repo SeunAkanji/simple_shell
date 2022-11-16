@@ -1,1 +1,1 @@
-Write a simple UNIX command interpreter
+Write a simple UNIX command interpreter by Akanji Oluwaseun & Bisi Adesujo
