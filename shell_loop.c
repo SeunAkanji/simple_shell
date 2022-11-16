@@ -124,7 +124,7 @@ void find_cmd(info_t *info)
 
 /**
  *
- * fork_cmd - forks a an exec thread to run cmd
+ * fork_cmd - forks a an exec thread to run cmd.
  * @info: the parameter & return info struct
  *
  * Return: void
