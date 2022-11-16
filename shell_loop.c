@@ -6,7 +6,7 @@
  * @info: the parameter & return info struct
  * @av: the argument vector from main()
  *
- * Return: 0 for success, 1 for error, or error code
+ * Return: 0 for success status, 1 for error, or error code
  *
  */
 
