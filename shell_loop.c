@@ -8,7 +8,6 @@
  * Return: 0 for success status, 1 for error, or error code
  *
  */
-
 int hsh(info_t *info, char **av)
 {
 	ssize_t r = 0;
@@ -40,7 +39,7 @@ int hsh(info_t *info, char **av)
 	{
 		if (info->err_num == -1)
 			exit(info->status);
-	exit(info->err_num);
+		exit(info->err_num);
 	}
 	return (builtin_ret);
 }
@@ -89,8 +88,8 @@ int find_builtin(info_t *info)
 void find_cmd(info_t *info)
 {
 	char *path = NULL;
-
 	int i, k;
+
 	info->path = info->argv[0];
 	if (info->linecount_flag == 1)
 	{
@@ -102,6 +101,7 @@ void find_cmd(info_t *info)
 			k++;
 	if (!k)
 		return;
+
 	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
 	if (path)
 	{
@@ -111,14 +111,15 @@ void find_cmd(info_t *info)
 	else
 	{
 		if ((interactive(info) || _getenv(info, "PATH=")
-		|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
-			fork_cmd(info)
+			|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
+			fork_cmd(info);
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
 			print_error(info, "not found\n");
 		}
 	}
+}
 
 /**
  * fork_cmd - forks a an exec thread to run cmd.
@@ -126,10 +127,10 @@ void find_cmd(info_t *info)
  *
  * Return: void
  */
-
 void fork_cmd(info_t *info)
 {
 	pid_t child_pid;
+
 	child_pid = fork();
 	if (child_pid == -1)
 	{
